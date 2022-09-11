@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: print-date
         run: date "+%H:%M:%S   %d/%m/%y"
   job2:
@@ -16,7 +16,17 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: print-date
         run: 'powershell get-date -format "{dd-MMM-yyyy HH:mm}"'
+  job3: 
+    name: Third Job
+    runs-on: macos-latest
+    needs: job1
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v3
+      - name: print-date
+      - run: date "+%H:%M:%S   %d/%m/%y"
+
   
