@@ -1,0 +1,22 @@
+name: first-challenge
+
+on: push
+
+jobs:
+  job1:
+    name: First Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: print-date
+        run: date "+%H:%M:%S   %d/%m/%y"
+  job2:
+    name: Second Job
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: print-date
+        run: 'powershell get-date -format "{dd-MMM-yyyy HH:mm}"'
+  
