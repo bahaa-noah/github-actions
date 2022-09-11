@@ -25,8 +25,8 @@ jobs:
     needs: job1
     steps:
       - name: Checkout
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       - name: print-date
-      - run: date "+%H:%M:%S   %d/%m/%y"
+        run: date "+%H:%M:%S   %d/%m/%y"
 
   
